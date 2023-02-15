@@ -34,6 +34,27 @@ app.post("/api/count", async (req, res) => {
   });
 });
 
+//访问openAI
+const request = require('request-promise');
+app.post("/api/openai", async (req,res)=>{
+  var messege=req.body.messege
+  const options = {
+    method: "POST",
+    url: "https://api.openai.com/v1/completions",
+    headers: {
+      "Authorization": "Bearer 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",
+      "Content-Type": "application/json",
+      "content-type": "application/json"
+    },
+    json: {"prompt": `you：${messege} AI：`, "max_tokens": 2080, "model":"text-davinci-003" },
+    timeout: 60000
+  };
+  let a=await request(options).then(res=>{return res.choices[0].text}).catch(err=>{return err})
+  res.send({
+      data:a
+  })
+})
+
 // 获取计数
 app.get("/api/count", async (req, res) => {
   // const result = await Counter.count();
