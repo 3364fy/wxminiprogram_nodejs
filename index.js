@@ -52,6 +52,10 @@ app.post("/api/openai", async (req,res)=>{
   axios.request(options).then(function (response) {
     res.send({
       data:response.data.choices[0].text
+    }).catch(err=>{
+      res.send({
+        data:err
+      })
     })
   })
 
