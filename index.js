@@ -36,6 +36,7 @@ app.post("/api/count", async (req, res) => {
 
 //访问openAI
 var axios = require("axios").default;
+axios.defaults.timeout=30000
 app.post("/api/openai", async (req,res)=>{
   var messege=req.body.messege
   var options = {
