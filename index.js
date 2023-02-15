@@ -30,6 +30,7 @@ app.post("/api/count", async (req, res) => {
   res.send({
     code: 0,
     data: await Counter.count(),
+    req:req
   });
 });
 
