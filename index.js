@@ -36,7 +36,10 @@ app.post("/api/count", async (req, res) => {
 
 //访问openAI
 var axios = require("axios").default;
-axios.defaults.timeout=30000
+const instance = axios.create({
+  timeout: 50000 // 设置超时时间为50秒
+});
+
 app.post("/api/openai", async (req,res)=>{
   var messege=req.body.messege
   var options = {
@@ -50,7 +53,7 @@ app.post("/api/openai", async (req,res)=>{
     data: {prompt: `you：${messege} AI：`, max_tokens: 400, model: 'text-davinci-003', stop: ''},
   };
 
-  axios.request(options).then(function (response) {
+  instance.request(options).then(function (response) {
     res.send({
       data:response.data.choices[0].text
     }).catch(err=>{
