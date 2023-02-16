@@ -82,7 +82,7 @@ app.get("/api/openai1", async (req,res)=>{
 
   instance.request(options).then(function (response) {
     res.send({
-      data:response
+      data:1
     }).catch(err=>{
       res.send({
         data:err
