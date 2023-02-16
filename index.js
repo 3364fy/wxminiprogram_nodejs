@@ -50,7 +50,7 @@ app.post("/api/openai", async (req,res)=>{
     method: 'POST',
     url: 'https://api.openai.com/v1/completions',
     headers: {
-      Authorization: 'Bearer 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',
+      Authorization: 'Bearer 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',
       'Content-Type': 'application/json',
       'OpenAI-Organization': 'yldsysrc',
       'content-type': 'application/json'
@@ -77,7 +77,7 @@ app.get("/api/openai", async (req,res)=>{
     method: 'POST',
     url: 'https://api.openai.com/v1/completions',
     headers: {
-      Authorization: 'Bearer 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',
+      Authorization: 'Bearer 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',
       'Content-Type': 'application/json',
       'OpenAI-Organization': 'yldsysrc',
       'content-type': 'application/json'
