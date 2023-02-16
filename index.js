@@ -52,7 +52,7 @@ app.post("/api/openai", async (req,res)=>{
     headers: {
       Authorization: 'Bearer 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',
       'Content-Type': 'application/json',
-      'OpenAI-Organization': 'yldsysrc',
+      'OpenAI-Organization': 'org-deUtqXTFWS6uDmzgLiknciis',
       'content-type': 'application/json'
     },
     data: {prompt: `you：${message} AI：`, max_tokens: 400, model: 'text-davinci-003', stop: ''},
@@ -79,7 +79,7 @@ app.get("/api/openai", async (req,res)=>{
     headers: {
       Authorization: 'Bearer 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',
       'Content-Type': 'application/json',
-      'OpenAI-Organization': 'yldsysrc',
+      'OpenAI-Organization': 'org-deUtqXTFWS6uDmzgLiknciis',
       'content-type': 'application/json'
     },
     data: {prompt: `you：你好 AI：`, max_tokens: 400, model: 'text-davinci-003', stop: ''},
