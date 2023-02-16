@@ -67,6 +67,31 @@ app.post("/api/openai", async (req,res)=>{
 
 })
 
+
+app.get("/api/openai1", async (req,res)=>{
+  var options = {
+    method: 'POST',
+    url: 'https://api.openai.com/v1/completions',
+    headers: {
+      Authorization: 'Bearer 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',
+      'Content-Type': 'application/json',
+      'content-type': 'application/json'
+    },
+    data: {prompt: `you：你好 AI：`, max_tokens: 400, model: 'text-davinci-003', stop: ''},
+  };
+
+  instance.request(options).then(function (response) {
+    res.send({
+      data:response
+    }).catch(err=>{
+      res.send({
+        data:err
+      })
+    })
+  })
+
+})
+
 // 获取计数
 app.get("/api/count", async (req, res) => {
   // const result = await Counter.count();
