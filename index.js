@@ -44,15 +44,18 @@ app.post("/api/openai", async (req,res)=>{
   // console.log(req.body)
   // console.log('================================================')
   console.info('333333333')
+  var message=req.body.message
+  console.log(message)
   var options = {
     method: 'POST',
     url: 'https://api.openai.com/v1/completions',
     headers: {
-      Authorization: 'Bearer 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',
+      Authorization: 'Bearer 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',
       'Content-Type': 'application/json',
+      'OpenAI-Organization': 'yldsysrc',
       'content-type': 'application/json'
     },
-    data: {prompt: `you：${messege} AI：`, max_tokens: 400, model: 'text-davinci-003', stop: ''},
+    data: {prompt: `you：${message} AI：`, max_tokens: 400, model: 'text-davinci-003', stop: ''},
   };
 
   instance.request(options).then(function (response) {
