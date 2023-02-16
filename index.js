@@ -74,8 +74,9 @@ app.get("/api/openai", async (req,res)=>{
     method: 'POST',
     url: 'https://api.openai.com/v1/completions',
     headers: {
-      Authorization: 'Bearer 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',
+      Authorization: 'Bearer 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',
       'Content-Type': 'application/json',
+      'OpenAI-Organization': 'yldsysrc',
       'content-type': 'application/json'
     },
     data: {prompt: `you：你好 AI：`, max_tokens: 400, model: 'text-davinci-003', stop: ''},
