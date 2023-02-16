@@ -42,8 +42,8 @@ const instance = axios.create({
 
 app.post("/api/openai", async (req,res)=>{
   var messege=req.body.messege
-  console.log(req.body)
-  console.log('================================================')
+  // console.log(req.body)
+  // console.log('================================================')
   logger(messege)
   var options = {
     method: 'POST',
@@ -69,8 +69,8 @@ app.post("/api/openai", async (req,res)=>{
 })
 
 
-app.get("/api/openai1", async (req,res)=>{
-  console.log('================================================')
+app.get("/api/openai", async (req,res)=>{
+  console.log('11111')
   var options = {
     method: 'POST',
     url: 'https://api.openai.com/v1/completions',
