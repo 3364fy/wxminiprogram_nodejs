@@ -74,7 +74,7 @@ app.get("/api/openai", async (req,res)=>{
     method: 'POST',
     url: 'https://api.openai.com/v1/completions',
     headers: {
-      Authorization: 'Bearer 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',
+      Authorization: 'Bearer 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',
       'Content-Type': 'application/json',
       'content-type': 'application/json'
     },
