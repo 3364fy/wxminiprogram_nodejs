@@ -44,6 +44,7 @@ app.post("/api/openai", async (req,res)=>{
   var messege=req.body.messege
   // console.log(req.body)
   // console.log('================================================')
+  console.info('333333333')
   logger(messege)
   var options = {
     method: 'POST',
@@ -71,6 +72,7 @@ app.post("/api/openai", async (req,res)=>{
 
 app.get("/api/openai", async (req,res)=>{
   console.log('11111')
+  console.info('222222')
   var options = {
     method: 'POST',
     url: 'https://api.openai.com/v1/completions',
