@@ -45,12 +45,13 @@ app.post("/api/openai", async (req,res)=>{
   // console.log('================================================')
   console.info('333333333')
   var message=req.body.message
+  var openaikey=req.body.openaikey
   console.log(message)
   var options = {
     method: 'POST',
     url: 'https://api.openai.com/v1/completions',
     headers: {
-      Authorization: 'Bearer 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',
+      Authorization: `Bearer ${openaikey}`,
       'Content-Type': 'application/json',
       'OpenAI-Organization': 'org-deUtqXTFWS6uDmzgLiknciis',
       'content-type': 'application/json'
@@ -71,32 +72,32 @@ app.post("/api/openai", async (req,res)=>{
 })
 
 
-app.get("/api/openai", async (req,res)=>{
-  console.log('11111')
-  var options = {
-    method: 'POST',
-    url: 'https://api.openai.com/v1/completions',
-    headers: {
-      Authorization: 'Bearer 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',
-      'Content-Type': 'application/json',
-      'OpenAI-Organization': 'org-deUtqXTFWS6uDmzgLiknciis',
-      'content-type': 'application/json'
-    },
-    data: {prompt: `you：你好 AI：`, max_tokens: 400, model: 'text-davinci-003', stop: ''},
-  };
-
-  instance.request(options).then(response=> {
-    console.log(response)
-    res.send({
-      data:1
-    }).catch(err=>{
-      res.send({
-        data:err
-      })
-    })
-  })
-
-})
+// app.get("/api/openai", async (req,res)=>{
+//   console.log('11111')
+//   var options = {
+//     method: 'POST',
+//     url: 'https://api.openai.com/v1/completions',
+//     headers: {
+//       Authorization: 'Bearer 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',
+//       'Content-Type': 'application/json',
+//       'OpenAI-Organization': 'org-deUtqXTFWS6uDmzgLiknciis',
+//       'content-type': 'application/json'
+//     },
+//     data: {prompt: `you：你好 AI：`, max_tokens: 400, model: 'text-davinci-003', stop: ''},
+//   };
+//
+//   instance.request(options).then(response=> {
+//     console.log(response)
+//     res.send({
+//       data:1
+//     }).catch(err=>{
+//       res.send({
+//         data:err
+//       })
+//     })
+//   })
+//
+// })
 
 // 获取计数
 app.get("/api/count", async (req, res) => {
